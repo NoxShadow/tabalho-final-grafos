@@ -3,6 +3,8 @@ package view;
 import controller.GrafoController;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -10,6 +12,9 @@ public class TelaPrincipal {
     private JButton processarDadosButton;
     private JTextPane painelDeTexto;
     private JPanel container;
+    private JButton comparacaoDeCustoButton;
+    private JButton questãoAButton;
+    private JButton questãoBButton;
 
     private GrafoController controller = new GrafoController();
 
@@ -24,6 +29,19 @@ public class TelaPrincipal {
                     setMensagemPainelTexto("Dados carregados");
                 } catch (Exception ex) {
                     mostrarMensagemErro(ex.getMessage());
+                }
+            }
+        });
+        comparacaoDeCustoButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                try {
+                    setMensagemPainelTexto(controller.gerarArvoreGeradora());
+                } catch (Exception ex) {
+                    setMensagemPainelTexto(ex.getMessage());
+                    ex.printStackTrace();
                 }
             }
         });

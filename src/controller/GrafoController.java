@@ -1,6 +1,8 @@
 package controller;
 
+import grafo.ArvoreGeradora;
 import grafo.Grafo;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,7 +30,17 @@ public class GrafoController {
         processarConjuntosVerticeValor(conjuntosVerticeValor);
     }
 
-    private void processarConjuntosVerticeValor(String[] conjuntosVerticeValor) {
+    public String gerarArvoreGeradora() {
+        if(this.grafo != null) {
+            ArvoreGeradora arvore = new ArvoreGeradora(grafo.clone());
+
+            return arvore.toString();
+        } else {
+            return "Por favor, faça o carregamento dos dados iniciais";
+        }
+    }
+
+    private void processarConjuntosVerticeValor(@NotNull String[] conjuntosVerticeValor) {
         final int posicaoValoresObjetivo = 0;
 
         processarVerticesObjetivo(conjuntosVerticeValor[posicaoValoresObjetivo]);
@@ -49,7 +61,7 @@ public class GrafoController {
 
     }
 
-    private void processarVerticesObjetivo(String conjuntoVertices) {
+    private void processarVerticesObjetivo(@NotNull String conjuntoVertices) {
         String[] vertices = conjuntoVertices.split(" ");
 
         if (vertices.length != 2) {
@@ -60,7 +72,7 @@ public class GrafoController {
         nomeVerticeDestinoObjetivo = vertices[1];
     }
 
-    private void processarConjunto(String[] valores) {
+    private void processarConjunto(@NotNull String[] valores) {
         if(valores.length != 3) {
             throw new IllegalArgumentException();
         }
@@ -77,4 +89,5 @@ public class GrafoController {
 
         return new String(Files.readAllBytes(Paths.get(caminhoArquivoEntrada)));
     }
+
 }

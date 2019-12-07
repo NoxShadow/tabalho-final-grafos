@@ -1,37 +1,63 @@
 package grafo;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 // Nathan Reikdal Cervieri
 public class Grafo {
 
-    private HashMap<String, Vertice> vertices;
+    protected ArrayList<Vertice> vertices;
+    protected ConjuntoAresta arestas;
 
     public Grafo() {
-        this.vertices = new HashMap<>();
+        this.vertices = new ArrayList<>();
+        this.arestas = new ConjuntoAresta();
     }
 
     public void adicionarAresta(String nomeVerticeOrigem, String nomeVerticeDestino, double valorAresta) {
-        if (!possuiVertice(nomeVerticeOrigem)) {
-            adicionarVertice(nomeVerticeOrigem);
-        }
+        Vertice verticeOrigem = possuiVertice(nomeVerticeOrigem) ? vertices.get(vertices.indexOf(new Vertice(nomeVerticeOrigem))) : adicionarVertice(nomeVerticeOrigem);
+        Vertice verticeDestino = possuiVertice(nomeVerticeDestino) ? vertices.get(vertices.indexOf(new Vertice(nomeVerticeDestino))) : adicionarVertice(nomeVerticeDestino);
 
-        if (!possuiVertice(nomeVerticeDestino)) {
-            adicionarVertice(nomeVerticeDestino);
-        }
-
-        Vertice verticeOrigem = vertices.get(nomeVerticeOrigem);
-        Vertice verticeDestino = vertices.get(nomeVerticeDestino);
-
-        verticeOrigem.adicionarLigacao(verticeDestino, valorAresta);
+        arestas.adicionarAresta(verticeOrigem, verticeDestino, valorAresta);
     }
 
-    private void adicionarVertice(String nomeVertice) {
-        vertices.put(nomeVertice, new Vertice(nomeVertice));
+    private Vertice adicionarVertice(String nomeVertice) {
+        Vertice verticeNovo = new Vertice(nomeVertice);
+
+        vertices.add(verticeNovo);
+
+        return verticeNovo;
     }
 
     private boolean possuiVertice(String nomeVertice) {
-        return vertices.containsKey(nomeVertice);
+        return vertices.contains(new Vertice(nomeVertice));
     }
 
+    @SuppressWarnings({"MethodDoesntCallSuperMethod"})
+    @Override
+    public Grafo clone() {
+        Grafo clone = new Grafo();
+
+        for (Aresta aresta : arestas.getArestas()) {
+            clone.adicionarAresta(aresta.getVerticeOrigem().getNome(), aresta.getVerticeDestino().getNome(), aresta.getValor());
+        }
+
+        return clone;
+    }
+
+    @Override
+    public String toString() {
+        return arestas.toString();
+    }
+
+    public double getTotalArestas() {
+        return arestas.getTotalArestas();
+    }
+
+    ConjuntoAresta getArestas() {
+        return arestas;
+    }
+
+    ArrayList<Vertice> getVertices() {
+        return vertices;
+    }
 }
