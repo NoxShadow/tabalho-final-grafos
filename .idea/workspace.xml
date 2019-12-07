@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53d3dbfa-d7cb-437b-be5b-70df6e8f1500" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grafo/ArvoreGeradora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grafo/ConjuntoAresta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grafo/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grafo/CalculoDeUmParaOutro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grafo/VerticeDjikstra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrabalhoFinalGrafos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TrabalhoFinalGrafos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/controller/GrafoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/controller/GrafoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Aresta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Aresta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Grafo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Vertice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/Vertice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/ArvoreGeradora.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/ArvoreGeradora.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/ConjuntoAresta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/grafo/ConjuntoAresta.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalGrafos/view/TelaPrincipal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GrafoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GrafoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grafo/Aresta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/Aresta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grafo/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grafo/ArvoreGeradora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/ArvoreGeradora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grafo/ConjuntoAresta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/ConjuntoAresta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grafo/Vertice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/Vertice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TelaPrincipal.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="ClassComNome" />
         <option value="Class" />
+        <option value="ClassComNome" />
       </list>
     </option>
   </component>
@@ -105,7 +100,7 @@
       <workItem from="1575592913010" duration="2400000" />
       <workItem from="1575595512967" duration="8379000" />
       <workItem from="1575732701684" duration="3383000" />
-      <workItem from="1575741446785" duration="8415000" />
+      <workItem from="1575741446785" duration="10835000" />
     </task>
     <servers />
   </component>
@@ -124,16 +119,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/grafo/ArvoreGeradora.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -45,6 +45,19 @@ public class TelaPrincipal {
                 }
             }
         });
+        questãoAButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                try {
+                    setMensagemPainelTexto(controller.gerarQuestaoA());
+                } catch (Exception ex) {
+                    setMensagemPainelTexto(ex.getMessage());
+                    ex.printStackTrace();
+                }
+            }
+        });
     }
 
     private void mostrarMensagemErro(String mensagem) {

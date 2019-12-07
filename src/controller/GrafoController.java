@@ -1,7 +1,9 @@
 package controller;
 
 import grafo.ArvoreGeradora;
+import grafo.CalculoDeUmParaOutro;
 import grafo.Grafo;
+import grafo.Vertice;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -31,13 +33,27 @@ public class GrafoController {
     }
 
     public String gerarArvoreGeradora() {
-        if(this.grafo != null) {
+        if (this.grafo != null) {
             ArvoreGeradora arvore = new ArvoreGeradora(grafo.clone());
 
             return arvore.toString();
         } else {
             return "Por favor, faça o carregamento dos dados iniciais";
         }
+    }
+
+    public String gerarQuestaoA() {
+        if (this.grafo != null) {
+            CalculoDeUmParaOutro origemDestino = new CalculoDeUmParaOutro(grafo.clone(), new Vertice(nomeVerticeOrigemObjetivo), new Vertice(nomeVerticeDestinoObjetivo));
+
+            return origemDestino.toString();
+        } else {
+            return "Por favor, faça o carregamento dos dados iniciais";
+        }
+    }
+
+    public String gerarQuestaoB() {
+        return "Não implementado a tempo, desculpe";
     }
 
     private void processarConjuntosVerticeValor(@NotNull String[] conjuntosVerticeValor) {
@@ -73,7 +89,7 @@ public class GrafoController {
     }
 
     private void processarConjunto(@NotNull String[] valores) {
-        if(valores.length != 3) {
+        if (valores.length != 3) {
             throw new IllegalArgumentException();
         }
 

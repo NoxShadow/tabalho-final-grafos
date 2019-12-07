@@ -55,8 +55,6 @@ class ConjuntoAresta {
 
         builder.append("Vértices: [ ").append("\n");
 
-
-
         for (Aresta aresta : arestas) {
             builder.append(aresta).append("\n");
             valorTotalArestas += aresta.getValor();

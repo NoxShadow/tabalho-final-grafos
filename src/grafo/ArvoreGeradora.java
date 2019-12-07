@@ -13,12 +13,15 @@ public class ArvoreGeradora extends Grafo {
     private HashSet<Vertice> verticesJaInseridos;
     private ConjuntoAresta conjuntoPrim;
 
+    private ArrayList<Aresta> arestasOrdenadas;
+
     public ArvoreGeradora(Grafo grafoOriginal) {
         this.arestas = grafoOriginal.getArestas();
         this.vertices = grafoOriginal.getVertices();
 
         verticesJaInseridos = new HashSet<>();
         conjuntoPrim = new ConjuntoAresta();
+        arestasOrdenadas = new ArrayList<>();
 
         gerarArvoreGeradora();
 
@@ -85,8 +88,28 @@ public class ArvoreGeradora extends Grafo {
 
     private void adicionarAresta(Aresta aresta) {
         this.conjuntoPrim.adicionarAresta(aresta);
+        arestasOrdenadas.add(aresta);
 
         verticesJaInseridos.add(aresta.getVerticeOrigem());
         verticesJaInseridos.add(aresta.getVerticeDestino());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        double valorTotalArestas = 0;
+
+        builder.append("Vértices: [ ").append("\n");
+
+        for (Aresta aresta : arestasOrdenadas) {
+            builder.append(aresta).append("\n");
+            valorTotalArestas += aresta.getValor();
+        }
+
+        builder.append("\n").append("]").append("\n");
+
+        builder.append("Custo Total: ").append(valorTotalArestas);
+
+        return builder.toString();
     }
 }

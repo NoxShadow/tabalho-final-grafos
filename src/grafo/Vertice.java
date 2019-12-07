@@ -8,7 +8,7 @@ public class Vertice {
 
     private String nome;
 
-    Vertice(String nome) {
+    public Vertice(String nome) {
         this.nome = nome;
     }
 
